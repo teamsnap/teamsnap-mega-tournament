@@ -3,7 +3,11 @@
 }
 
 .App-header {
+<<<<<<< HEAD
   background-color: #eee;
+=======
+  background-color: #333;
+>>>>>>> temp
   min-height: 10vh;
   display: flex;
   flex-direction: column;
@@ -11,6 +15,21 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+<<<<<<< HEAD
+=======
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.App-header a, .App-header a:visited {
+  color: white;
+}
+
+.App-header li {
+  display: flex;
+>>>>>>> temp
 }
 
 .App-link {
@@ -26,6 +45,14 @@
   }
 }
 
+<<<<<<< HEAD
+=======
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+>>>>>>> temp
 
 .card {
   border: 1px solid #61dafb;
@@ -38,4 +65,8 @@
 .rainbow-text {
   background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
   color: transparent;
+<<<<<<< HEAD
+=======
+  text-shadow: 1px 1px 15px white;
+>>>>>>> temp
 }
