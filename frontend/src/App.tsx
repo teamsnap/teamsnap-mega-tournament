@@ -36,11 +36,7 @@ const App: React.FC = () => {
               </li>
             </ul>
           </header>
-<<<<<<< HEAD
-          <main>
-=======
           <main className="container">
->>>>>>> temp
               <Switch>
                 <Route path="/teams">
                   <Teams />
