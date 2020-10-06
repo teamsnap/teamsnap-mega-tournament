@@ -14,6 +14,8 @@ We need you to modify the code to support the following:
 - Changes don't have to look pretty, but they shouldn't be worse than anything else on the page.
 - Our teams are supposed to be pulling data from our API, but anytime we submit our form, we dont see our data in the database. If you have time, can you investigate that, too?
 
+Our values have changed over the years, and we really like good UX and well tested code! Please feel free to add/modify tests and the UX to however you see fit!
+
 The Tournament starts in 2 hours and its far more important for you to come out and watch the games than it is to fix all these issues, so don't spend more than 2 hours on this :) It's okay if you don't finish everything, we can tackle anything that's left before the next tournament.
 
 Oh! We'd love to use this code for next year's tournament too, so feel free to clean up anything that seems like poor coding decisions.
