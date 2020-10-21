@@ -9,11 +9,12 @@ This application is a VERY old application that we're dusting off for the occasi
 We're missing several key features for this tournament to go off without a hitch and it's up to you to help us add them! (Note: There is no actual tournament and no children or families will be disappointed if a feature doesnt make it in).
 
 We need you to modify the code to support the following:
-- Our original architect was extremely against using a Database (In memory is faster, they said!), but our data isn't saved across application restarts. We need you to persist the Teams data to the database.
-- We're hoping to integrate with an API to display Team Information on the scoreboard during the tournament, but for the integration needs us to expose an endpoint that gets all the information for a specific team. They're pretty flexible with what that endpoint looks like, so feel free to do what feels best!
-- Our frontend dashboard is supposed to be pulling the teams from the web server, but what we're seeing on the frontend doesn't always make sense with whats in the database. Any chance you can investigate that, too?
+- The Tournament Organizer needs all new teams who sign up to have a team captain, so we need to capture their first and last name on sign up.
+- When we look at the team list, we need to see the team captain's first and last name.
+- Changes don't have to look pretty, but they shouldn't be worse than anything else on the page.
+- Our teams are supposed to be pulling data from our API, but anytime we submit our form, we dont see our data in the database. If you have time, can you investigate that, too?
 
-Our values have changed over the years, and we really like good UX and well tested code! Please feel free to add/modify tests and (if you find yourself in the frontend) the UX to however you see fit! As a reminder, this is a fully open API, so don't worry about implementing anything like OAUTH, but It wouldn't hurt to have an idea as to how you would!
+Our values have changed over the years, and we really like good UX and well tested code! Please feel free to add/modify tests and the UX to however you see fit!
 
 The Tournament starts in 2 hours and its far more important for you to come out and watch the games than it is to fix all these issues, so don't spend more than 2 hours on this :) It's okay if you don't finish everything, we can tackle anything that's left before the next tournament.
 
