@@ -42,7 +42,7 @@ $ git clone https://github.com/teamsnap/teamsnap-mega-tournament.git && cd teams
 
 # Setup
 $ docker-compose run frontend yarn
-$ docker-compose run backend bundle exec rake db:create
+$ docker-compose run --rm backend bundle exec rails db:reset
 
 # Start
 $ docker-compose up -d
