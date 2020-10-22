@@ -44,6 +44,9 @@ $ git clone https://github.com/teamsnap/teamsnap-mega-tournament.git && cd teams
 $ docker-compose run frontend yarn
 $ docker-compose run --rm backend bundle exec rails db:reset
 
+# Tests
+$ docker-compose run --rm backend bundle exec rspec
+
 # Start
 $ docker-compose up -d
 
