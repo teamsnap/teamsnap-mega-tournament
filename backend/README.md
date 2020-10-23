@@ -11,6 +11,8 @@ We're missing several key features for this tournament to go off without a hitch
 We need you to modify the code to support the following:
 - Our original architect was extremely against using a Database (In memory is faster, they said!), but our data isn't saved across application restarts. We need you to persist the Teams data to the database.
 - We're hoping to integrate with an API to display Team Information on the scoreboard during the tournament, but for the integration needs us to expose an endpoint that gets all the information for a specific team. They're pretty flexible with what that endpoint looks like, so feel free to do what feels best!
+- We also want to integrate with Giphy to generate a team GIF that we can show on the scoreboard every time that a team scores (Woohoo!). Can you create an endpoint for us that, given a team name, calls out to [Giphy's API](https://developers.giphy.com/docs/api/endpoint#search) to find a Gif (please, no jifs)? Oh! and the API key can be found in the docker-compose file.
+  - To clarify, we want to send the team name to Giphy's API to get back a gif and serve that from our API.
 - Our frontend dashboard is supposed to be pulling the teams from the web server, but what we're seeing on the frontend doesn't always make sense with whats in the database. Any chance you can investigate that, too?
 
 Our values have changed over the years, and we really like good UX and well tested code! Please feel free to add/modify tests and (if you find yourself in the frontend) the UX to however you see fit! As a reminder, this is a fully open API, so don't worry about implementing anything like OAUTH, but It wouldn't hurt to have an idea as to how you would!
