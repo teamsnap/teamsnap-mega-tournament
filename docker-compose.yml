@@ -3,6 +3,10 @@ services:
   db:
     container_name: postgres
     image: postgres:11
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: changeme
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
     environment:
@@ -12,6 +16,7 @@ services:
     build: ./backend
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     environment:
+      DATABASE_URL: postgres://postgres:changeme@db
       GIPHY_AUTH_TOKEN: r9tTc0B4mBp7CPtOAgmKDBBTsDvzl5mV
     volumes:
       - ./backend:/myapp/backend
