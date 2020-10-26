@@ -14,9 +14,7 @@ export const addTeam = (teamInfo) => {
 
 export const submitTeam = (params) => (dispatch) => {
   if (params) {
-    console.log(params);
     API.postData(params.url, params).then((data) => {
-      console.log(params);
       dispatch(addTeam({
         id: data.content.id,
         teamName: data.content.name,
