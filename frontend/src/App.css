@@ -57,3 +57,15 @@
   color: transparent;
   text-shadow: 1px 1px 15px white;
 }
+
+/* Universal styles */
+/* Display */
+.u-flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Margins */
+.u-marginBottom-small {
+  margin-bottom: .5rem;
+}
