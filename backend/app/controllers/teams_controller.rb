@@ -1,5 +1,4 @@
 class TeamsController < ApplicationController
-  helper_method :fetch_team_names
   skip_before_action :verify_authenticity_token
 
   def index
