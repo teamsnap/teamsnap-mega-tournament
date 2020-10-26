@@ -76,8 +76,12 @@
   margin-top: 30px;
 }
 
-.submit-btn:hover {
-  cursor: pointer;
+.submit-btn:disabled {
+  background-color: #e8f3da;
+  cursor: not-allowed;
+}
+
+.submit-btn:hover:enabled {
   background-color: #007400;
   transition: 0.3s;
 }
@@ -103,6 +107,6 @@
   margin-right: 10px;
 }
 
-.btn:hover {
+.btn:hover:enabled {
   cursor: pointer;
 }

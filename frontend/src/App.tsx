@@ -27,14 +27,6 @@ const App: React.FC = () => {
             <Link to="/">
               <h2 className="rainbow-text">TeamSnap Mega Tournament!</h2>
             </Link>
-            <ul>
-              <li>
-                <Link to="/teams">View Teams</Link>
-              </li>
-              <li>
-                <Link to="/join">Register Teams</Link>
-              </li>
-            </ul>
           </header>
           <main className="container">
               <Switch>

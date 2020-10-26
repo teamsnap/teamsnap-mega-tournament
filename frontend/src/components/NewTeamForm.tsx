@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FormInput from "./FormInput";
+import { useHistory } from "react-router-dom";
 
 interface Props {
   submitTeam: any;
@@ -7,6 +8,7 @@ interface Props {
 }
 
 const NewTeamForm: React.FC<Props> = ({ submitTeam, baseurl }) => {
+  const history = useHistory();
   const [teamName, setTeamName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -39,6 +41,7 @@ const NewTeamForm: React.FC<Props> = ({ submitTeam, baseurl }) => {
             <input
               className="submit-btn btn"
               type="submit"
+              disabled={!teamName || !firstName || !lastName}
               onClick={(e) => {
                 e.preventDefault();
                 submitTeam({
@@ -47,6 +50,7 @@ const NewTeamForm: React.FC<Props> = ({ submitTeam, baseurl }) => {
                   firstName,
                   lastName,
                 });
+                history.push("/teams");
               }}
             />
           </div>

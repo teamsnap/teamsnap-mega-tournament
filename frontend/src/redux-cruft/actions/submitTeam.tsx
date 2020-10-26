@@ -1,15 +1,13 @@
 import { update } from "./update";
-import API from "../../api";
 
 export const submitTeam = (params) => (dispatch) => {
-  console.log(params);
   if (params) {
     dispatch(
       update({
         key: "teams",
         value: [
           {
-            teamName: params.name,
+            teamName: params.teamName,
             captain: {
               firstName: params.firstName,
               lastName: params.lastName,
@@ -19,6 +17,6 @@ export const submitTeam = (params) => (dispatch) => {
       })
     );
   }
-
-  return API.postData(params.url, params).then((data) => {});
+  return params;
+  // return API.postData(params.url, params).then((data) => {});
 };

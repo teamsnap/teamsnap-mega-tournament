@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TeamCard from "../components/TeamCard";
 import { Link } from "react-router-dom";
 
@@ -6,24 +6,19 @@ const Teams: React.FC<{ teams: any[] } & { getTeams: any }> = ({
   teams,
   getTeams,
 }) => {
-  const [cards, setCards] = React.useState<any>([]);
-  React.useEffect(() => {
-    setCards([]);
-  }, [teams]);
-
-  React.useEffect(() => {
-    getTeams();
+  useEffect(() => {
+    getTeams(teams);
   }, []);
-  console.log(teams);
 
   return (
     <div>
-      <h4 style={{ textAlign: "center" }}>
-        Don't see your team? <Link to="/join">Register here</Link>
-      </h4>
+      {teams.length > 0 && (
+        <h4 style={{ textAlign: "center" }}>
+          Don't see your team? <Link to="/join">Register here</Link>
+        </h4>
+      )}
       {teams.length > 0 ? (
         teams.map((team, index) => {
-          console.log("team", team);
           return (
             <TeamCard
               key={index}
@@ -42,23 +37,6 @@ const Teams: React.FC<{ teams: any[] } & { getTeams: any }> = ({
       )}
     </div>
   );
-  // teams.length > 0 ? return (<p>TEAMS!</p>) : <p>ewww</p>;
-
-  // React.useEffect(() => {
-  //   teams?.map((team, index) => {
-  //     console.log("team", team);
-  //     setCards([
-  //       ...cards,
-  //       <TeamCard
-  //         key={index}
-  //         teamName={team.teamName}
-  //         captain={team.captain}
-  //       />,
-  //     ]);
-  //   });
-  // }, [teams]);
-  // console.log("cards", cards);
-  // return <>{cards}</>;
 };
 
 export default Teams;

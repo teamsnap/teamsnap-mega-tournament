@@ -12,16 +12,15 @@ const Home: React.FC = () => {
       <div>
         <button
           className="register-btn btn"
-          onClick={() => history.push("/join")}
-        >
-          Register team
-        </button>
-
-        <button
-          className="register-btn btn"
           onClick={() => history.push("/teams")}
         >
           View teams
+        </button>
+        <button
+          className="register-btn btn"
+          onClick={() => history.push("/join")}
+        >
+          Register team
         </button>
       </div>
     </div>
