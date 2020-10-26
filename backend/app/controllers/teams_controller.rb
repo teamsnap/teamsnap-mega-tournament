@@ -1,13 +1,29 @@
 class TeamsController < ApplicationController
+  helper_method :fetch_team_names
   skip_before_action :verify_authenticity_token
 
-  @@teams = []
   def index
-    render json: { content: @@teams }
+    begin
+      render json: { content: Team.fetch_team_names }
+    rescue => e
+      render json: {error: e}
+    end
   end
 
   def create
-    @@teams << params[:team]
-    render json: { content: @@teams }
+    begin
+      new_team = Team.new
+      new_team.name = params[:team]
+      response = {}
+      if new_team.valid?
+        new_team.save
+      else
+        response[:error] = new_team.errors.messages
+      end
+      response[:content] = Team.fetch_team_names
+      render json: response
+    rescue => e
+      render json: { content: Team.fetch_team_names, error: e }
+    end
   end
 end
