@@ -37,11 +37,16 @@ const NewTeamForm: React.FC<Props> = ({ submitTeam, baseurl }) => {
           />
           <div style={{ display: "flex", justifyContent: "center" }}>
             <input
-              className="submit-btn"
+              className="submit-btn btn"
               type="submit"
               onClick={(e) => {
                 e.preventDefault();
-                submitTeam({ url: baseurl + "/new-team", teamName, firstName });
+                submitTeam({
+                  url: baseurl + "/new-team",
+                  teamName,
+                  firstName,
+                  lastName,
+                });
               }}
             />
           </div>

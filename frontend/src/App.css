@@ -72,11 +72,6 @@
 
 .submit-btn {
   background-color: #78b332;
-  border: none;
-  border-radius: 3px;
-  color: #fff;
-  font-weight: bold;
-  height: 35px;
   width: 152px;
   margin-top: 30px;
 }
@@ -85,4 +80,29 @@
   cursor: pointer;
   background-color: #007400;
   transition: 0.3s;
+}
+
+.view-team {
+  box-shadow: 0px 0px 2px 1px #ff6323;
+  padding: 24px;
+  width: 70%;
+  margin: 10px;
+}
+
+.register-btn {
+  background-color: #ff6323;
+  width: 152px;
+}
+
+.btn {
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  height: 35px;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.btn:hover {
+  cursor: pointer;
 }
