@@ -1,7 +1,7 @@
 import { applyMiddleware, compose, createStore } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 
-import rootReducer from './reducers';
+import rootReducer from './redux-cruft/reducers';
 
 export default function configureStore(preloadedState: any) {
   const middlewares = [thunkMiddleware];
