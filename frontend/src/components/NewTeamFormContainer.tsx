@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { submitTeam } from '../redux-cruft/actions/submitTeam';
+import { submitTeam } from '../redux-cruft/actions/teams';
 import NewTeamForm from './NewTeamForm';
 
 const mapDispatchToProps = {
