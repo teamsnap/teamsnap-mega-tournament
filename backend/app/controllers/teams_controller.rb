@@ -19,7 +19,7 @@ class TeamsController < ApplicationController
       else
         response[:error] = new_team.errors.messages
       end
-      response[:content] = Team.fetch_team_names
+      response[:content] = new_team
       render json: response
     rescue => e
       render json: { content: Team.fetch_team_names, error: e }
