@@ -37,17 +37,17 @@ const App: React.FC = () => {
             </ul>
           </header>
           <main className="container">
-              <Switch>
-                <Route path="/teams">
-                  <Teams />
-                </Route>
-                <Route path="/join">
-                  <Join baseurl={BACKEND_API_URL} />
-                </Route>
-                <Route path="/">
-                  <Home />
-                </Route>
-              </Switch>
+            <Switch>
+              <Route path="/teams">
+                <Teams />
+              </Route>
+              <Route path="/join">
+                <Join baseurl={BACKEND_API_URL} />
+              </Route>
+              <Route path="/">
+                <Home />
+              </Route>
+            </Switch>
           </main>
         </div>
       </Router>

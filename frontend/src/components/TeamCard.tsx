@@ -1,13 +1,11 @@
 import React from 'react';
-import {
-  Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface Props {
   teamName: String,
 }
 
-const TeamCard: React.FC<Props> = ({teamName}) => {
+const TeamCard: React.FC<Props> = ({ teamName }) => {
 
   return (
     <div className="card">
