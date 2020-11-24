@@ -7,7 +7,7 @@ const mapDispatchToProps = {
   submitTeam,
 };
 
-const NewTeamFormContainer: React.FC<{ baseurl: string }> = ({ baseurl }) =>
+const NewTeamFormContainer: React.FC<{ baseurl: string, submitTeam: any }> = ({ baseurl, submitTeam }) =>
   <NewTeamForm submitTeam={submitTeam} baseurl={baseurl} />;
 
 export default connect(null, mapDispatchToProps)(NewTeamFormContainer);

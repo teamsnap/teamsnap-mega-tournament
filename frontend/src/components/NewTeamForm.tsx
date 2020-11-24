@@ -10,12 +10,23 @@ const NewTeamForm: React.FC<Props> = ({ submitTeam, baseurl }) => {
   const [captainFirstName, setCaptainFirstName] = React.useState("");
   const [captainLastName, setCaptainLastName] = React.useState("");
 
+  const onSubmitHandler = (e: any) => {
+    e.preventDefault();
+    console.log('e', e);
+    submitTeam({
+      url: baseurl + "/new-team",
+      teamName: teamName,
+      captainFirstName: captainFirstName,
+      captainLastName: captainLastName,
+    });
+  }
+
   return (
     <div className="card">
       <h4>New Team</h4>
       <div>
         <label>Team Name:</label>
-        <input type="text" value={name} onChange={(e) => setTeamName(e.target.value)} />
+        <input type="text" value={teamName} onChange={(e) => setTeamName(e.target.value)} />
       </div>
       <h5>Team Captain</h5>
       <div>
@@ -26,15 +37,7 @@ const NewTeamForm: React.FC<Props> = ({ submitTeam, baseurl }) => {
         <label>Last Name:</label>
         <input type="text" value={captainLastName} onChange={(e) => setCaptainLastName(e.target.value)} />
       </div>
-      <input type="submit" onClick={(e) => {
-        e.preventDefault();
-        submitTeam({
-          url: baseurl + "/new-team",
-          teamName: teamName,
-          captainFirstName: captainFirstName,
-          captainLastName: captainLastName,
-        });
-      }} />
+      <input type="submit" onClick={(e) => onSubmitHandler(e)} />
     </div>
   );
 }
