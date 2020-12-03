@@ -13,7 +13,7 @@ const NewTeamForm: React.FC<Props> = ({ submitTeam, baseurl }) => {
   const onSubmitHandler = (e: any) => {
     e.preventDefault();
     submitTeam({
-      url: baseurl + "/new-team",
+      url: baseurl + "/teams",
       teamName: teamName,
       captainFirstName: captainFirstName,
       captainLastName: captainLastName,

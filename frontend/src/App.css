@@ -52,6 +52,15 @@
   margin: 4px auto;
 }
 
+.card label {
+  margin-right: 5px;
+}
+
+.card div,
+.card input[type="submit"] {
+  margin-top: 8px;
+}
+
 .rainbow-text {
   background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
   color: transparent;

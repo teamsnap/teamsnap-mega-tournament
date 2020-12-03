@@ -5,7 +5,7 @@ export const submitTeam = (params) => (dispatch) => {
   if (params) {
     dispatch(update({
       key: "teams", value: [{
-        teamName: params.name,
+        teamName: params.teamName,
         captainFirstName: params.captainFirstName,
         captainLastName: params.captainLastName,
       }]
