@@ -4,14 +4,15 @@ import {
 } from "react-router-dom";
 
 interface Props {
-  teamName: String,
+  captainName: String,
+  teamName: String
 }
 
-const TeamCard: React.FC<Props> = ({teamName}) => {
-
+const TeamCard: React.FC<Props> = ({ captainName, teamName }) => {
   return (
     <div className="card">
       <h4>{teamName}</h4>
+      <h5>{captainName}</h5>
       <Link to="/join">Register your team</Link>
     </div>
   );

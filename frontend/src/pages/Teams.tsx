@@ -1,26 +1,23 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import TeamCard from '../components/TeamCard';
 
-
-const Teams: React.FC<{teams: any[]} & {getTeams: any}> = ({teams, getTeams}) => {
+const Teams: React.FC<{teams: any[]} & {getTeams: any}> = () => {
   const [cards, setCards] = React.useState<any>([]);
-  React.useEffect(() => {
-    setCards([]);
-  }, [teams]);
+
+  const teams = useSelector(state => state.teams);
 
   React.useEffect(() => {
-    getTeams();
-  }, []);
-
-  React.useEffect(() => {
-    teams?.forEach((team) => {
-      setCards([...cards, <TeamCard teamName={team.teamName} />]);
-    });
+    const newArr = [...teams];
+    teams.map((team: {}, index: number) => {
+      newArr[index] = team;
+      setCards(newArr);
+    })
   }, [teams]);
 
   return (
     <>
-      {cards}
+      {cards.map(card => <TeamCard captainName={card.captainName} teamName={card.teamName} />)}
     </>
   );
 }

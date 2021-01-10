@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,20 +6,25 @@ import {
   Link
 } from "react-router-dom";
 import { Provider } from 'react-redux';
-import store from './store';
+import { createStore } from 'redux';
+
+/* local imports */
+import './App.css';
 
 import Home from './pages/Home';
 import Join from './pages/Join';
 import Teams from './pages/TeamsContainer';
 
+import rootReducer from './reducers';
+
+/* Create store from reducers */
+const store = createStore(rootReducer);
+
 const BACKEND_API_URL = process.env.BACKEND_API_URL || 'http://backend.localhost';
 
 const App: React.FC = () => {
-
   return (
-    <Provider store={store({
-      teams: []
-    })}>
+    <Provider store={store}>
       <Router>
         <div className="App">
           <header className="App-header">
