@@ -22,6 +22,10 @@ const NewTeamForm: React.FC<Props> = ({ submitTeam, baseurl }) => {
         captainLastName: "",
     });
 
+    const [submitResult, setSubmitResult] = React.useState<
+        "not-submitted" | "success" | "error"
+    >("not-submitted");
+
     const handleChange = (e: React.SyntheticEvent) => {
         const { name, value } = e.target as HTMLInputElement;
         setTeam((prevState: Team) => {
@@ -51,8 +55,23 @@ const NewTeamForm: React.FC<Props> = ({ submitTeam, baseurl }) => {
                     }}
                 >
                     <h4>New Team</h4>
+                    {submitResult !== "not-submitted" && (
+                        <div
+                            className={`result-message ${
+                                submitResult === "error"
+                                    ? "new-team-error"
+                                    : "new-team-success"
+                            }`}
+                        >
+                            <p>
+                                {submitResult === "error"
+                                    ? "An error occurred. Please try again later."
+                                    : "Team registered successfully!"}
+                            </p>
+                        </div>
+                    )}
                     <FormField>
-                        <label htmlFor="teamName">Name:</label>
+                        <label htmlFor="teamName">Name</label>
                         <input
                             id="teamName"
                             required={true}
@@ -64,7 +83,7 @@ const NewTeamForm: React.FC<Props> = ({ submitTeam, baseurl }) => {
                     </FormField>
                     <FormField>
                         <label htmlFor="captainFirstName">
-                            Captain First Name:
+                            Captain First Name
                         </label>
                         <input
                             id="captainFirstName"
@@ -77,7 +96,7 @@ const NewTeamForm: React.FC<Props> = ({ submitTeam, baseurl }) => {
                     </FormField>
                     <FormField>
                         <label htmlFor="captainLastName">
-                            Captain Last Name:
+                            Captain Last Name
                         </label>
                         <input
                             id="captainLastName"
@@ -88,14 +107,21 @@ const NewTeamForm: React.FC<Props> = ({ submitTeam, baseurl }) => {
                             onChange={handleChange}
                         />
                     </FormField>
-                    <input
-                        type="submit"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            submitTeam({ url: baseurl + "/teams", team });
-                        }}
-                        disabled={isDisabled()}
-                    />
+                    <FormField>
+                        <input
+                            type="submit"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                submitTeam({
+                                    url: baseurl + "/teams",
+                                    team,
+                                })
+                                    .then((res) => setSubmitResult("success"))
+                                    .catch((e) => setSubmitResult("error"));
+                            }}
+                            disabled={isDisabled()}
+                        />
+                    </FormField>
                 </div>
             </form>
         </div>

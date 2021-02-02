@@ -10,7 +10,7 @@ body {
     background-color: rgb(71, 71, 71);
     min-height: 10vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
@@ -22,31 +22,36 @@ body {
 }
 
 .App-header-logo-text {
-    font-family: museo-slab;
+    font-weight: bold;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     text-decoration: none;
-    font-size: large;
+    font-size: small;
 }
 
 .App-header a,
 .App-header a:visited {
     color: white;
+    text-decoration: none;
+}
+
+.App-header ul {
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .App-header li {
     display: flex;
+    font-size: medium;
 }
 
 .App-link {
     color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
 }
 
 .container {
@@ -55,7 +60,8 @@ body {
 }
 
 .card {
-    border: 1px solid #61dafb;
+    border: 1px solid lightgray;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px;
     border-radius: 4px;
     padding: 8px;
     max-width: 60%;
@@ -77,6 +83,10 @@ input[type="submit"] {
     color: #fff;
 }
 
+input:invalid {
+    border: 1px solid #ff0000;
+}
+
 input:disabled[type="submit"] {
     background-color: lightgray;
     border-color: white;
@@ -93,4 +103,27 @@ input:disabled[type="submit"] {
 .form-field > label {
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0.2em;
+    font-size: 14px;
+}
+
+.form-field > input {
+    width: 100%;
+}
+
+.result-message {
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    background-color: #f3e5e5;
+}
+
+.new-team-error {
+    border: #ff0000;
+    color: #ff0000;
+}
+
+.new-team-success {
+    border: #7fc243;
+    color: #7fc243;
 }

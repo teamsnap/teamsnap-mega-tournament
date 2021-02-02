@@ -17,5 +17,5 @@ export const submitTeam = (params) => (dispatch) => {
         );
     }
 
-    return API.postData(params.url, params.team).then((data) => {});
+    return API.postData(params.url, params.team).then((data) => data);
 };
