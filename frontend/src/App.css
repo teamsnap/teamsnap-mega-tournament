@@ -1,59 +1,96 @@
+body {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-header {
-  background-color: #333;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  flex-grow: 1;
+    background-color: rgb(71, 71, 71);
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    flex-grow: 1;
 }
 
-.App-header a, .App-header a:visited {
-  color: white;
+.App-header-logo-text {
+    font-family: museo-slab;
+    text-decoration: none;
+    font-size: large;
+}
+
+.App-header a,
+.App-header a:visited {
+    color: white;
 }
 
 .App-header li {
-  display: flex;
+    display: flex;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .container {
-  max-width: 1024px;
-  margin: 0 auto;
+    max-width: 1024px;
+    margin: 0 auto;
 }
-
 
 .card {
-  border: 1px solid #61dafb;
-  border-radius: 4px;
-  padding: 8px;
-  max-width: 60%;
-  margin: 4px auto;
+    border: 1px solid #61dafb;
+    border-radius: 4px;
+    padding: 8px;
+    max-width: 60%;
+    margin: 4px auto;
 }
 
-.rainbow-text {
-  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
-  color: transparent;
-  text-shadow: 1px 1px 15px white;
+input {
+    font-size: 16px;
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background-color: #fff;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #7fc243;
+    border-color: #669b36;
+    color: #fff;
+}
+
+input:disabled[type="submit"] {
+    background-color: lightgray;
+    border-color: white;
+    color: darkgrey;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px;
+}
+
+.form-field > label {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0.2em;
 }
