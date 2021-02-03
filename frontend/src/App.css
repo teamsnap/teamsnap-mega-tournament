@@ -114,7 +114,6 @@ input:disabled[type="submit"] {
     border-radius: 4px;
     display: flex;
     flex-direction: column;
-    margin: 20px;
 }
 
 .result-message p {
