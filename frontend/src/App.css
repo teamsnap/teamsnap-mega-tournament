@@ -114,16 +114,21 @@ input:disabled[type="submit"] {
     border-radius: 4px;
     display: flex;
     flex-direction: column;
-    max-width: 300px;
-    background-color: #f3e5e5;
+    margin: 20px;
+}
+
+.result-message p {
+    padding: 5px 10px 5px 10px;
 }
 
 .new-team-error {
     border: #ff0000;
     color: #ff0000;
+    background-color: #f3e5e5;
 }
 
 .new-team-success {
     border: #7fc243;
     color: #7fc243;
+    background-color: #d8e7da;
 }

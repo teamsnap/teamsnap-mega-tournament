@@ -1,4 +1,5 @@
 import React from "react";
+import { Team } from "../types/types";
 
 const FormField: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return <div className="form-field">{children}</div>;
@@ -7,12 +8,6 @@ const FormField: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 interface Props {
     submitTeam: any;
     baseurl: string;
-}
-
-interface Team {
-    teamName: string;
-    captainFirstName: string;
-    captainLastName: string;
 }
 
 const NewTeamForm: React.FC<Props> = ({ submitTeam, baseurl }) => {
