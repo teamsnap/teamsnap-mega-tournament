@@ -105,6 +105,7 @@ const NewTeamForm: React.FC<Props> = ({ submitTeam, baseurl }) => {
                     <FormField>
                         <input
                             type="submit"
+                            style={{ width: "unset" }}
                             onClick={(e) => {
                                 e.preventDefault();
                                 submitTeam({

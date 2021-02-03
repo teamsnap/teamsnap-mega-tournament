@@ -1,5 +1,5 @@
 export interface Team {
     teamName: string;
-    captainFirstName: string;
-    captainLastName: string;
+    captainFirstName?: string;
+    captainLastName?: string;
 }

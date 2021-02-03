@@ -65,7 +65,7 @@ body {
     border-radius: 4px;
     padding: 8px;
     max-width: 60%;
-    margin: 4px auto;
+    margin: 10px auto;
 }
 
 input {
@@ -98,6 +98,7 @@ input:disabled[type="submit"] {
     flex-direction: column;
     align-items: flex-start;
     padding: 5px;
+    width: 100%;
 }
 
 .form-field > label {
@@ -107,13 +108,15 @@ input:disabled[type="submit"] {
 }
 
 .form-field > input {
-    width: 100%;
+    width: 90%;
 }
 
 .result-message {
     border-radius: 4px;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
 }
 
 .result-message p {
@@ -130,4 +133,43 @@ input:disabled[type="submit"] {
     border: #7fc243;
     color: #7fc243;
     background-color: #d8e7da;
+}
+
+.card-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.avatar {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    max-width: 30px;
+    max-height: 30px;
+    background-color: #ff8f00;
+    color: #fff;
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 500;
+    flex: 1;
+}
+
+.card-title {
+    flex: 4;
+    text-align: start;
+    margin-left: 25px;
 }
