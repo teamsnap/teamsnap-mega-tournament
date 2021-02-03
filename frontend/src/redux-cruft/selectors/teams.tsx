@@ -1,1 +1,3 @@
-export const selectTeams = (state: {}) => (state as any).teams || [];
+export const selectTeams = (state: {}) => {
+    return (state as any).teams || [];
+};

@@ -1,14 +1,9 @@
-import { connect } from 'react-redux';
-import { selectTeams } from '../redux-cruft/selectors/teams';
-import { getTeams } from '../redux-cruft/actions/getTeams';
-import Teams from './Teams';
-
-const mapDispatchToProps = {
-  getTeams,
-};
+import { connect } from "react-redux";
+import { selectTeams } from "../redux-cruft/selectors/teams";
+import Teams from "./Teams";
 
 const mapStateToProps = (state: any) => ({
-  teams: selectTeams(state),
+    teams: selectTeams(state),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Teams);
+export default connect(mapStateToProps)(Teams);

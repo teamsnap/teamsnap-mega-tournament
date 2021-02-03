@@ -13,11 +13,23 @@ import TeamSnapLogo from "./components/TeamSnapLogo";
 const BACKEND_API_URL =
     process.env.BACKEND_API_URL || "http://backend.localhost";
 
+const teams = [
+    {
+        teamName: "Teamsnap Turtles",
+    },
+    {
+        teamName: "TeamSnap Turkeys (because Turtles was already taken)",
+    },
+    {
+        teamName: "Lion Brigade",
+    },
+];
+
 const App: React.FC = () => {
     return (
         <Provider
             store={store({
-                teams: [],
+                teams,
             })}
         >
             <Router>
