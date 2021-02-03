@@ -6,17 +6,24 @@ const Teams: React.FC<{ teams: any[] } & { getTeams: any }> = ({
     getTeams,
 }) => {
     const [cards, setCards] = React.useState<any>([]);
-    // React.useEffect(() => {
-    //   setCards([]);
-    // }, [teams]);
 
     React.useEffect(() => {
         getTeams();
     }, []);
 
     React.useEffect(() => {
-        teams?.forEach((team) => {
-            setCards([...cards, <TeamCard team={team} />]);
+        setCards((prevState: any) => {
+            return [
+                ...prevState,
+                teams?.map((team, index) => {
+                    return (
+                        <TeamCard
+                            key={`${team.teamName}-${index}`}
+                            team={team}
+                        />
+                    );
+                }),
+            ];
         });
     }, [teams]);
 

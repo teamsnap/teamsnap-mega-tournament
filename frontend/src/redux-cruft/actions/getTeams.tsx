@@ -1,6 +1,6 @@
 import { update } from "./update";
 
-export const getTeams = (params: any) => (dispatch: any) => {
+export const getTeams = () => (dispatch: any) => {
     // TODO: Brad said to get this data from the API BUT THE API DOESNT EXIST YET
     // I NEED TO COME BACK AND FILL THIS IN ONCE THE API EXISTS
     dispatch(
