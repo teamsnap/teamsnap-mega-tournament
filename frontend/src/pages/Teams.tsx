@@ -16,7 +16,7 @@ const Teams: React.FC<{ teams: any[] } & { getTeams: any }> = ({
 
     React.useEffect(() => {
         teams?.forEach((team) => {
-            setCards([...cards, <TeamCard teamName={team.teamName} />]);
+            setCards([...cards, <TeamCard team={team} />]);
         });
     }, [teams]);
 

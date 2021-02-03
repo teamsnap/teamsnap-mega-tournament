@@ -111,8 +111,12 @@ const NewTeamForm: React.FC<Props> = ({ submitTeam, baseurl }) => {
                                     url: baseurl + "/teams",
                                     team,
                                 })
-                                    .then((res) => setSubmitResult("success"))
-                                    .catch((e) => setSubmitResult("error"));
+                                    .then((res: any) =>
+                                        setSubmitResult("success")
+                                    )
+                                    .catch((e: Error) =>
+                                        setSubmitResult("error")
+                                    );
                             }}
                             disabled={isDisabled()}
                         />

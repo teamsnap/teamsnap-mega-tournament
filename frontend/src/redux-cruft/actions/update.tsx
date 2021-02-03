@@ -1,4 +1,4 @@
-export const update = (params) => (dispatch) => {
-  // IDK Let the reducer figure it out
-  dispatch({type: "UPDATE", ...params})
-}
+export const update = (params: any) => (dispatch: any) => {
+    // IDK Let the reducer figure it out
+    dispatch({ type: "UPDATE", ...params });
+};

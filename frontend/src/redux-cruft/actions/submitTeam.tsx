@@ -1,7 +1,7 @@
 import { update } from "./update";
 import API from "../../api";
 
-export const submitTeam = (params) => (dispatch) => {
+export const submitTeam = (params: any) => (dispatch: any) => {
     if (params) {
         dispatch(
             update({
