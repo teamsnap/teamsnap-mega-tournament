@@ -43,8 +43,7 @@ At TeamSnap, one of our core values is fun so try to have fun with the project t
 $ git clone https://github.com/teamsnap/teamsnap-mega-tournament.git && cd teamsnap-mega-tournament
 
 # Setup
-$ docker-compose run frontend yarn
-$ docker-compose run --rm backend bundle exec rails db:reset
+$ docker-compose run --rm frontend yarn
 
 # Tests
 $ docker-compose run --rm backend bundle exec rspec
