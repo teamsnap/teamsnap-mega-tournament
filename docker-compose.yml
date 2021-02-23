@@ -1,27 +1,27 @@
 version: '3'
 services:
-  db:
-    container_name: postgres
-    image: postgres:11
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_PASSWORD: changeme
-    volumes:
-      - ./tmp/db:/var/lib/postgresql/data
-    environment:
-      POSTGRES_HOST_AUTH_METHOD: trust
+  # db:
+  #   container_name: postgres
+  #   image: postgres:11
+  #   ports:
+  #     - "5432:5432"
+  #   environment:
+  #     POSTGRES_PASSWORD: changeme
+  #   volumes:
+  #     - ./tmp/db:/var/lib/postgresql/data
+  #   environment:
+  #     POSTGRES_HOST_AUTH_METHOD: trust
   backend:
     container_name: backend
     build: ./backend
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     environment:
-      DATABASE_URL: postgres://postgres:changeme@db
+      # DATABASE_URL: postgres://postgres:changeme@db
       GIPHY_AUTH_TOKEN: r9tTc0B4mBp7CPtOAgmKDBBTsDvzl5mV
     volumes:
       - ./backend:/myapp/backend
-    depends_on:
-      - db
+    # depends_on:
+    #   - db
   frontend:
     container_name: frontend
     image: "node:14-alpine"
