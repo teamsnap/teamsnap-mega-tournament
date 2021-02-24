@@ -33,7 +33,7 @@ RSpec.describe "/teams", type: :request do
     context 'when searching many records' do
       before(:all) do |example|
         services = []
-        100_000.times do |i|
+        50_000.times do |i|
           services << {
             name: Faker::Name.unique.name,
             created_at: Time.now,
