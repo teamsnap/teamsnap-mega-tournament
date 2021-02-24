@@ -31,16 +31,22 @@ RSpec.describe "/teams", type: :request do
     end
 
     context 'when searching many records' do
-      before(:all) do |example|
-        services = []
-        50_000.times do |i|
-          services << {
-            name: Faker::Name.unique.name,
-            created_at: Time.now,
-            updated_at: Time.now
-          }
+      before(:all) do
+        4.times do
+          services = []
+          25_000.times do |i|
+            services << {
+              name: Faker::Name.unique.name,
+              created_at: Time.now,
+              updated_at: Time.now
+            }
+          end
+          Team.insert_all(services)
         end
-        Team.insert_all(services)
+      end
+
+      after(:all) do
+        # cleanup data
       end
 
       it 'searches efficiently' do
