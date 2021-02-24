@@ -30,15 +30,25 @@ RSpec.describe "/teams", type: :request do
       expect(JSON.parse(response.body).count).to eq(1)
     end
 
-    it 'searches efficiently' do
-      100_000.times do |i|
-        Team.create(name: Faker::Name.unique.name)
+    context 'when searching many records' do
+      before(:all) do |example|
+        services = []
+        100_000.times do |i|
+          services << {
+            name: Faker::Name.unique.name,
+            created_at: Time.now,
+            updated_at: Time.now
+          }
+        end
+        Team.insert_all(services)
       end
-      Team.create(name: "Lions")
 
-      get "/teams/search?name=lions"
-
-      # expect
+      it 'searches efficiently' do
+        Team.create(name: "Lions")
+        expect {
+          get "/teams/search?name=lions"
+        }.to perform_under(0.15).sec
+      end
     end
   end
 end
