@@ -1,9 +1,9 @@
 FROM ruby:2.7.2
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
-WORKDIR /myapp/backend
-COPY Gemfile* ./
+WORKDIR /usr/src/app/backend
+COPY Gemfile Gemfile.lock ./
 RUN bundle install
-COPY . /myapp/backend
+COPY . .
 
 ENV ENTRYKIT_VERSION 0.4.0
 RUN wget https://github.com/progrium/entrykit/releases/download/v${ENTRYKIT_VERSION}/entrykit_${ENTRYKIT_VERSION}_Linux_x86_64.tgz \
@@ -15,4 +15,4 @@ RUN wget https://github.com/progrium/entrykit/releases/download/v${ENTRYKIT_VERS
 
 ENTRYPOINT [ \
   "prehook", "ruby -v", "--", \
-  "prehook", "/myapp/backend/prehook", "--"]
+  "prehook", "/usr/src/app/backend/prehook", "--"]
