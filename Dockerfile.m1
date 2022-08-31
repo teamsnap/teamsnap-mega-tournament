@@ -1,0 +1,33 @@
+# pulls entrykit from master and builds from source
+FROM golang:1.17.1
+
+RUN apt-get update && \
+    apt-get install unzip -y
+
+RUN wget https://github.com/progrium/entrykit/archive/refs/heads/master.zip \
+    && echo testing the dir \
+    && ls -a\
+    && unzip master.zip \
+    && rm master.zip \
+    && cd entrykit-master/ \
+    && make build \
+    && mv build/Linux/entrykit /bin/entrykit
+
+FROM ruby:2.7.1
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
+WORKDIR /teamsnap-mega-tournament/backend
+COPY Gemfile* ./
+ENV BUNDLE_PATH /gems
+RUN bundle config set force_ruby_platform true
+RUN gem install nokogiri --platform=ruby
+RUN bundle install
+COPY . /teamsnap-mega-tournament/backend
+
+ENV ENTRYKIT_VERSION 0.4.0
+COPY --from=0 /bin/entrykit /bin/entrykit
+RUN chmod +x /bin/entrykit \
+    && entrykit --symlink
+
+ENTRYPOINT [ \
+    "prehook", "ruby -v", "--", \
+    "prehook", "/teamsnap-mega-tournament/backend/prehook", "--"]
