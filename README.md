@@ -9,5 +9,6 @@ How to help:
  - Frontend [Go here!](https://github.com/teamsnap/teamsnap-mega-tournament/blob/main/frontend/README.md)
  - Full Stack: Do both (but you'll probably want to start with the backend)
 
-# M1 & M2 ARM64 Macbook Dockerfile
+# Important: M1 & M2 ARM64 Macbook Dockerfile replacement
+ - If you're using a newer Macbook with an M1 or M2 ARM64 chipset you will need to do the following.
  - Substitute `./backend/Dockerfile` with `./backend/Dockerfile.arm64` before following the [Backend README.md](https://github.com/teamsnap/teamsnap-mega-tournament/blob/main/backend/README.md)
