@@ -8,3 +8,6 @@ How to help:
  - Backend [Go here!](https://github.com/teamsnap/teamsnap-mega-tournament/blob/main/backend/README.md)
  - Frontend [Go here!](https://github.com/teamsnap/teamsnap-mega-tournament/blob/main/frontend/README.md)
  - Full Stack: Do both (but you'll probably want to start with the backend)
+
+# M1 & M2 ARM64 Macbook Dockerfile
+ - Substitute `./backend/Dockerfile` with `./backend/Dockerfile.arm64` before following the [Backend README.md](https://github.com/teamsnap/teamsnap-mega-tournament/blob/main/backend/README.md)

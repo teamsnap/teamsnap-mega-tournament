@@ -1,4 +1,6 @@
-# pulls entrykit from master and builds from source
+
+# This layer downloads EntryKit and builds from source for ARM64 (M1, M2) Macbooks 
+# See: https://github.com/progrium/entrykit/issues/16
 FROM golang:1.17.1
 
 RUN apt-get update && \
